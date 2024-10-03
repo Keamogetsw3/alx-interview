@@ -1,5 +1,32 @@
 # 0x00. Pascal's Triangle
 ### Algorithm |Python
+
+## Table of Contents
+1. [Resources](#Resources)
+2. [Features](#features)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Contributing](#contributing)
+6. [License](#license)
+
+## Introduction
+...
+
+## Features
+...
+
+## Installation
+...
+
+## Usage
+...
+
+## Contributing
+...
+
+## License
+...
+
 ## Resources
 ### What is Pascal’s triangle
 ![image](https://github.com/user-attachments/assets/d08e2744-7d2e-4492-9fcf-ca5d76785fdf)

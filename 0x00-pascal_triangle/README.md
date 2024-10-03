@@ -137,10 +137,22 @@
       # Print the rows of Pascal's Triangle
       for row in rows:
         print(row)
-   -  
-   -  
-   -  
-Functions:
+  
+- Functions:
+    - functions are reusable blocks of code designed to perform a specific task.
+    - They are defined using the def keyword and can take inputs (called parameters)
+    - return outputs using the return statement
+    - Once defined, functions can be called from anywhere in the program to execute their code
+ 
+    ```python
+    def function_name(parameters):
+    # Code block to execute
+    return result  # Optional, returns the output
+    
+    # To call a function, you use its name followed by parentheses (),
+    # and pass any required arguments inside the parentheses.
+    function_name(arguments)
+- 
 
 Know how to define and call functions.
 Pass parameters and return values, particularly how to return a list of lists representing Pascal’s Triangle.

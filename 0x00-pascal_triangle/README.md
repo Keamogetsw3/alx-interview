@@ -38,11 +38,25 @@
 
 ### 1. Lists and List Comprehensions:
 
-- create, access, modify, and iterate over lists:
+- Create a List:
   ```python
-  def hello_world():
-    print("Hello, world!")
+  # Creating a list of integers
+  my_list = [1, 2, 3, 4, 5]
+  # Creating an empty list
+  empty_list = []
 
+- Access Elements in a List:
+  ```python
+  # Accessing the first element
+  first_element = my_list[0]  # 1
+  # Accessing the last element
+  last_element = my_list[-1]  # 5
+  
+- Modify Elements in a List:
+  ```python
+  # Modifying the second element
+  my_list[1] = 10  # [1, 10, 3, 4, 5]
+  
 - 
 Utilize list comprehensions for more concise and readable code, especially for generating rows of Pascal’s Triangle.
 Functions:

@@ -40,10 +40,9 @@
 
 - create, access, modify, and iterate over lists:
   ```python
-def hello_world():
+  def hello_world():
     print("Hello, world!")
 
-hello_world()
 - 
 Utilize list comprehensions for more concise and readable code, especially for generating rows of Pascal’s Triangle.
 Functions:

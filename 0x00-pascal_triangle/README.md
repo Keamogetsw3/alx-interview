@@ -98,11 +98,11 @@
                 row.append(1)  # End each row with 1
                 triangle.append(row)
              return triangle
-    # This part should be outside the function definition
-    rows = generate_pascals_triangle(5)
-    # Print the rows of Pascal's Triangle
-    for row in rows:
-       print(row)
+      # This part should be outside the function definition
+      rows = generate_pascals_triangle(5)
+      # Print the rows of Pascal's Triangle
+      for row in rows:
+        print(row)
 
       
     

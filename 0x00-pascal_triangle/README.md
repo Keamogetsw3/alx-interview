@@ -57,8 +57,18 @@
   # Modifying the second element
   my_list[1] = 10  # [1, 10, 3, 4, 5]
   
+- Iterate Over a List:
+    - loop through a list using a for loop:
+    ```python
+    # Using a for loop to print all element
+    for element in my_list:
+    print(element)
+    # Output: 1, 10, 3, 4, 5
+    
+- Utilize list comprehensions for more concise and readable code, especially for generating rows of Pascal’s Triangle.
 - 
-Utilize list comprehensions for more concise and readable code, especially for generating rows of Pascal’s Triangle.
+
+- 
 Functions:
 
 Know how to define and call functions.

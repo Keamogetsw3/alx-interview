@@ -107,9 +107,24 @@
       
     
 - Utilize list comprehensions for more concise and readable code, especially for generating rows of Pascal’s Triangle.
-- 
+  - List comprehension is a concise way to create lists by applying an expression to each element in an iterable.
+  ```python
+  # Creating a list of squares using list comprehension
+  squares = [x**2 for x in range(1, 6)]
+  print(squares)  # Output: [1, 4, 9, 16, 25]
 
-- 
+  # Creating a list of even numbers only
+  evens = [x for x in range(10) if x % 2 == 0]
+  print(evens)  # Output: [0, 2, 4, 6, 8]
+
+ -  Pascal's Triangle Using List Comprehension
+   -  Pascal’s Triangle can be generated row by row
+   -  where each element of a row is the sum of the two elements above it from the previous row.
+   -  List comprehension can be used to generate each row efficiently.
+  
+   -  
+   -  
+   -  
 Functions:
 
 Know how to define and call functions.

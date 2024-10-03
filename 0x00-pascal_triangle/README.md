@@ -82,9 +82,9 @@
     # 5
     
   - Nested Loops for Pascal’s Triangle
-       -To generate Pascal’s Triangle, nested loops can be used, where:
-            - The outer loop generates each row.
-            - The inner loop computes the values of each row by summing adjacent elements from the previous row.
+    - To generate Pascal’s Triangle, nested loops can be used, where:
+      - The outer loop generates each row.
+      - The inner loop computes the values of each row by summing adjacent elements from the previous row.
       ```python
       def generate_pascals_triangle(n):
         triangle = [[1]]  # Start with the first row as [1]

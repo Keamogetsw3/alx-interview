@@ -118,10 +118,25 @@
   print(evens)  # Output: [0, 2, 4, 6, 8]
 
  -  Pascal's Triangle Using List Comprehension
-   -  Pascal’s Triangle can be generated row by row
-   -  where each element of a row is the sum of the two elements above it from the previous row.
-   -  List comprehension can be used to generate each row efficiently.
-  
+     -  Pascal’s Triangle can be generated row by row
+     -  where each element of a row is the sum of the two elements above it from the previous row.
+     -  List comprehension can be used to generate each row efficiently.
+     ```python
+     def generate_pascals_triangle(n):
+        triangle = [[1]]  # Start with the first row as [1]
+        # Outer loop to generate n rows
+        for i in range(1, n):
+             row = [1]  # Start each row with 1
+             prev_row = triangle[i - 1]
+             # New row is created using list comprehension
+             new_row = [1] + [prev_row[j] + prev_row[j+1] for j in range(len(prev_row) - 1)] + [1]
+             triangle.append(new_row)
+        return triangle
+      # This part should be outside the function definition
+      rows = generate_pascals_triangle(5)
+      # Print the rows of Pascal's Triangle
+      for row in rows:
+        print(row)
    -  
    -  
    -  

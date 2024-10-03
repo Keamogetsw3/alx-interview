@@ -9,23 +9,7 @@
 5. [Contributing](#contributing)
 6. [License](#license)
 
-## Introduction
-...
 
-## Features
-...
-
-## Installation
-...
-
-## Usage
-...
-
-## Contributing
-...
-
-## License
-...
 
 ## Resources
 ### What is Pascal’s triangle

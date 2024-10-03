@@ -3,7 +3,7 @@
 
 ## Table of Contents
 1. [Resources](#Resources)
-2. [Must Know](#MustKnow)
+2. [Revision](#Revision)
 3. [Installation](#installation)
 4. [Usage](#usage)
 5. [Contributing](#contributing)
@@ -33,4 +33,5 @@
   - The algorithm must terminate after a finite number of steps.
   - It must be feasible and exist using available resources.
   - The algorithm should be written independently of all programming code.
-## Must Know
+  - 
+## Revision

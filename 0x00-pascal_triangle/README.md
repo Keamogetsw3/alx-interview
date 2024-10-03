@@ -64,6 +64,47 @@
     for element in my_list:
     print(element)
     # Output: 1, 10, 3, 4, 5
+
+    
+ - A while loop is useful when the number of iterations isn't predetermined, and the loop should continue running based on a condition.
+    ```python
+    i = 0
+    # Using a while loop to iterate over a list
+    while i < len(my_list):
+      print(my_list[i])
+      i += 1
+
+    # Output:
+    # 1
+    # 10
+    # 3
+    # 4
+    # 5
+    
+  - Nested Loops for Pascal’s Triangle
+       -To generate Pascal’s Triangle, nested loops can be used, where:
+            - The outer loop generates each row.
+            - The inner loop computes the values of each row by summing adjacent elements from the previous row.
+      ```python
+      def generate_pascals_triangle(n):
+        triangle = [[1]]  # Start with the first row as [1]
+        # Outer loop to generate n rows
+        for i in range(1, n):
+             row = [1]  # Start each row with 1
+             prev_row = triangle[i - 1]
+             # Inner loop to calculate the intermediate values of the row
+             for j in range(1, i):
+                row.append(prev_row[j - 1] + prev_row[j])
+                row.append(1)  # End each row with 1
+                triangle.append(row)
+             return triangle
+    # This part should be outside the function definition
+    rows = generate_pascals_triangle(5)
+    # Print the rows of Pascal's Triangle
+    for row in rows:
+       print(row)
+
+      
     
 - Utilize list comprehensions for more concise and readable code, especially for generating rows of Pascal’s Triangle.
 - 

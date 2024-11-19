@@ -10,4 +10,4 @@ def rotate_2d_matrix(matrix):
     param:
         matrix: represents a row of the matrix
     """
-    
+    n = len(matrix[0])

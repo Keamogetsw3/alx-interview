@@ -18,19 +18,22 @@ def makeChange(coins, total):
     if total <= 0:
         return 0
 
-    # 0 ways in the following two cases
-    if sum < 0 or n == 0:
-        return 0
-
-    # count is sum of solutions (i)
-    # including coins[n-1] (ii) excluding coins[n-1]
-    return countRecur(coins, n, sum - coins[n - 1]) + \
-              countRecur(coins, n - 1, sum)
-
-def count(coins, sum):
-    return countRecur(coins, len(coins), sum)
-
-if __name__ == "__main__":
-    coins = [1, 2, 3]
-    sum = 5
-    print(count(coins, sum))
+   elif total > 0:
+    newList = sorted(coins[:])
+    newList = list(reversed(newList))
+    count = 0
+    value = total + 0
+    index = 0
+    
+    while value >= 0 and (index < len(newList)):
+        if value >= newList[index]:
+            value = value - newList[index]
+            count += 1
+        elif value < newList[index]:
+            index += 1
+    
+    if index == len(newList):
+        if value != 0:
+            return -1
+        elif value == 0:
+            return count

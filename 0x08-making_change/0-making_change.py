@@ -1,5 +1,7 @@
-# Python program for coin change problem.
-# using recursion
+#!/usr/bin/python3
+"""
+Python program for coin change problem using recursion
+"""
 
 def countRecur(coins, n, sum):
   

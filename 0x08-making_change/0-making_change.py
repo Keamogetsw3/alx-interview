@@ -3,7 +3,7 @@
 Python program for coin change problem using recursion
 """
 
-def countRecur(coins, n, sum):
+def makeChange(coins, total):
   
     # If sum is 0 then there is 1 solution
     # (do not include any coin)

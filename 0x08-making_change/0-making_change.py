@@ -3,15 +3,17 @@
 Python program for coin change problem using recursion
 """
 
+
 def makeChange(coins, total):
     """ 
-    This function returns the fewest number of coins needed to make up the given total.
+    This function returns the fewest number of.
+    coins needed to make up the given total.
     If the total cannot be made up with the given coins, it returns -1.
-    
+
     Arguments:
     coins: a list of integers representing the available coin denominations
     total: the total value we want to make with the fewest number of coins
-    
+
     Returns:
     int: the fewest number of coins needed to form the total, or -1 if it's not possible
     """

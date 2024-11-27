@@ -15,8 +15,8 @@ def makeChange(coins, total):
     Returns:
     int: the fewest number of coins needed to form the total, or -1 if it's not possible
     """
-    if sum == 0:
-        return 1
+    if total <= 0:
+        return 0
 
     # 0 ways in the following two cases
     if sum < 0 or n == 0:

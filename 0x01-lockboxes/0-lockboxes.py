@@ -7,8 +7,8 @@ method that determines if all the boxes can be opened
 def canUnlockAll(boxes):
     """
     Check if all boxes can be opened
-    
-    Args: 
+
+    Args:
     boxes: is a list of lists
 
     Return: True if all boxes can be opened, else return False

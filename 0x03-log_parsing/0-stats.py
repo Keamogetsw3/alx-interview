@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import sys
-""" reads stdin line by line and computes metrics """
+""" module to reads stdin line by line and computes metrics """
 
 
 def _print(status_dct, total_size):

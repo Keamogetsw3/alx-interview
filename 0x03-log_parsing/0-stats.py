@@ -50,8 +50,8 @@ try:
                     status_dct[status_code] += 1
 
             if line_count == 10:
-                display_statistics(status_dct, total_size)
+                _print(status_dct, total_size)
                 line_count = 0
 
 finally:
-    display_statistics(status_dct, total_size)
+    _print(status_dct, total_size)

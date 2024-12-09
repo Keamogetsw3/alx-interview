@@ -9,16 +9,17 @@ solutions = []
 n = 0
 pos = None
 
+
 def get_input():
     """
-    Retrieves the input value for N (number of queens) from the command line 
+    Retrieves the input value for N from the command line 
     arguments and validates it.
 
     Returns:
         int: The number of queens (N) specified by the user.
 
     Raises:
-        SystemExit: If the input is invalid (not a number, less than 4, or missing).
+        SystemExit: If the input is invalid.
     """
     global n
     n = 0
@@ -36,6 +37,7 @@ def get_input():
         sys.exit(1)
     return n
 
+
 def is_attacking(pos0, pos1):
     """
     Checks whether two queens are attacking each other on the chessboard.
@@ -51,12 +53,13 @@ def is_attacking(pos0, pos1):
         return True
     return abs(pos0[0] - pos1[0]) == abs(pos0[1] - pos1[1])
 
+
 def group_exists(group):
     """
-    Checks if a solution group (set of queen positions) already exists in the list of solutions.
+    Checks if a solution group already exists in the list of solutions.
 
     Arguments:
-        group (list): A list of queen positions representing a possible solution.
+        group: A list of queen positions representing a possible solution.
 
     Returns:
         bool: True if the group exists in the solutions list, False otherwise.
@@ -73,14 +76,14 @@ def group_exists(group):
             return True
     return False
 
+
 def build_solution(row, group):
     """
-    Recursively builds solutions to the N queens problem by placing queens 
-    on the board one row at a time and ensuring that no queens are attacking each other.
+    Recursively builds solutions to the N queens
 
     Arguments:
         row (int): The current row to place a queen on.
-        group (list): The list of positions representing the current configuration of queens.
+        group (list): The list of positions.
     """
     global solutions
     global n
@@ -98,9 +101,11 @@ def build_solution(row, group):
                 build_solution(row + 1, group)
             group.pop(len(group) - 1)
 
+
 def get_solutions():
     """
-    Generates all possible solutions to the N queens problem by recursively placing queens 
+    Generates all possible solutions to the N queens
+    problem by recursively placing queens
     and ensuring they do not attack each other.
     """
     global pos, n
@@ -108,6 +113,7 @@ def get_solutions():
     a = 0
     group = []
     build_solution(a, group)
+
 
 n = get_input()
 get_solutions()

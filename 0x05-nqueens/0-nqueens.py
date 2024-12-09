@@ -1,37 +1,116 @@
 #!/usr/bin/python3
-""" 
-The N queens puzzle is the challenge of placing N non-attacking queens on an N×N chessboard.
-Write a program that solves the N queens problem.
+"""
+N Queens program
 """
 import sys
 
 
-def print_solution(board):
-    """Prints a solution in the required format"""
-    solution = []
-    for i in range(len(board)):
-        solution.append([i, board[i]])
+solutions = []
+n = 0
+pos = None
+
+def get_input():
+    """
+    Retrieves the input value for N (number of queens) from the command line 
+    arguments and validates it.
+
+    Returns:
+        int: The number of queens (N) specified by the user.
+
+    Raises:
+        SystemExit: If the input is invalid (not a number, less than 4, or missing).
+    """
+    global n
+    n = 0
+
+    if len(sys.argv) != 2:
+        print("Usage: nqueens N")
+        sys.exit(1)
+    try:
+        n = int(sys.argv[1])
+    except Exception:
+        print("N must be a number")
+        sys.exit(1)
+    if n < 4:
+        print("N must be at least 4")
+        sys.exit(1)
+    return n
+
+def is_attacking(pos0, pos1):
+    """
+    Checks whether two queens are attacking each other on the chessboard.
+
+    Arguments:
+        pos0 (list): A list containing the row and column of the first queen.
+        pos1 (list): A list containing the row and column of the second queen.
+
+    Returns:
+        bool: True if the queens are attacking each other, False otherwise.
+    """
+    if (pos0[0] == pos1[0]) or (pos0[1] == pos1[1]):
+        return True
+    return abs(pos0[0] - pos1[0]) == abs(pos0[1] - pos1[1])
+
+def group_exists(group):
+    """
+    Checks if a solution group (set of queen positions) already exists in the list of solutions.
+
+    Arguments:
+        group (list): A list of queen positions representing a possible solution.
+
+    Returns:
+        bool: True if the group exists in the solutions list, False otherwise.
+    """
+    global solutions
+
+    for stn in solutions:
+        i = 0
+        for stn_pos in stn:
+            for grp_pos in group:
+                if stn_pos[0] == grp_pos[0] and stn_pos[1] == grp_pos[1]:
+                    i += 1
+        if i == n:
+            return True
+    return False
+
+def build_solution(row, group):
+    """
+    Recursively builds solutions to the N queens problem by placing queens 
+    on the board one row at a time and ensuring that no queens are attacking each other.
+
+    Arguments:
+        row (int): The current row to place a queen on.
+        group (list): The list of positions representing the current configuration of queens.
+    """
+    global solutions
+    global n
+    if row == n:
+        tmp0 = group.copy()
+        if not group_exists(tmp0):
+            solutions.append(tmp0)
+    else:
+        for col in range(n):
+            a = (row * n) + col
+            matches = zip(list([pos[a]]) * len(group), group)
+            used_positions = map(lambda x: is_attacking(x[0], x[1]), matches)
+            group.append(pos[a].copy())
+            if not any(used_positions):
+                build_solution(row + 1, group)
+            group.pop(len(group) - 1)
+
+def get_solutions():
+    """
+    Generates all possible solutions to the N queens problem by recursively placing queens 
+    and ensuring they do not attack each other.
+    """
+    global pos, n
+    pos = list(map(lambda x: [x // n, x % n], range(n ** 2)))
+    a = 0
+    group = []
+    build_solution(a, group)
+
+n = get_input()
+get_solutions()
+
+for solution in solutions:
     print(solution)
-
-def is_safe(board, row, col):
-    """Checks if it's safe to place a queen at the board[row][col] position"""
-    for i in range(row):
-        if board[i] == col or \
-           board[i] - i == col - row or \
-           board[i] + i == col + row:
-            return False
-    return True
-
-def solve_nqueens(N):
-    """Uses backtracking to solve the N queens problem and prints each solution"""
-    def backtrack(row):
-        if row == N:
-            print_solution(board)
-        else:
-            for col in range(N):
-                if is_safe(board, row, col):
-                    board[row] = col
-                    backtrack(row + 1)
-
-    board = [-1] * N
-    backtrack(0)

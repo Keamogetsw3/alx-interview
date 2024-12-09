@@ -12,7 +12,7 @@ pos = None
 
 def get_input():
     """
-    Retrieves the input value for N from the command line 
+    Retrieves the input value for N from the command line
     arguments and validates it.
 
     Returns:

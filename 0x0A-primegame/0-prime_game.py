@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-
 """
 Prime Game Problem
 """
+
 
 def isWinner(x, nums):
     """
@@ -13,7 +13,7 @@ def isWinner(x, nums):
         nums (list of int): A list of integers.
 
     Returns:
-        str: The name of the player who wins more rounds ("Maria" or "Ben"), 
+        str: The name of the player who wins more rounds ("Maria" or "Ben"),
              or None if there is a tie.
     """
 

@@ -1,33 +1,45 @@
 #!/usr/bin/python3
-"""Island Perimeter Problem
+
+"""
+Prime Game Problem
 """
 
-def island_perimeter(grid):
+def isWinner(x, nums):
     """
-    Calculates the perimeter of the island described in grid.
-    
-    Args:
-        grid (list[list[int]]): 2D grid of integers where 0 represents water and 1 represents land.
-    
-    Returns:
-        int: The perimeter of the island.
-    """
-    perimeter = 0
-    rows, cols = len(grid), len(grid[0]) if grid else 0
+    Determines the winner of the prime game after a specified number of rounds.
 
-    for i in range(rows):
-        for j in range(cols):
-            if grid[i][j] == 1:
-                # Check top
-                if i == 0 or grid[i - 1][j] == 0:
-                    perimeter += 1
-                # Check bottom
-                if i == rows - 1 or grid[i + 1][j] == 0:
-                    perimeter += 1
-                # Check left
-                if j == 0 or grid[i][j - 1] == 0:
-                    perimeter += 1
-                # Check right
-                if j == cols - 1 or grid[i][j + 1] == 0:
-                    perimeter += 1
-    return perimeter
+    Parameters:
+        x (int): The number of rounds to be played.
+        nums (list of int): A list of integers.
+
+    Returns:
+        str: The name of the player who wins more rounds ("Maria" or "Ben"), 
+             or None if there is a tie.
+    """
+
+    if x < 1 or not nums:
+        return None
+
+    maria_chances = 0
+    ben_chances = 0
+
+    n = max(nums)
+
+    primes = [True] * (n + 1)
+    primes[0] = primes[1] = False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if primes[i]:
+            for j in range(i * i, n + 1, i):
+                primes[j] = False
+
+    for num in nums:
+        prime_count = sum(primes[2:num + 1])
+        if prime_count % 2 == 0:
+            ben_chances += 1
+        else:
+            maria_chances += 1
+
+    if maria_chances == ben_chances:
+        return None  # Tie
+    return "Maria" if maria_chances > ben_chances else "Ben"

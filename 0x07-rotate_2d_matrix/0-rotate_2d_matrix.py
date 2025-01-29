@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 '''2D Matrix Rotation Module.
 
-This module provides a function to rotate a square 2D matrix by 90 degrees 
+This module provides a function to rotate a square 2D matrix by 90 degrees
 clockwise in-place.
 '''
+
 
 def rotate_2d_matrix(matrix):
     '''Rotates a 2D matrix 90° clockwise in place.
@@ -14,15 +15,15 @@ def rotate_2d_matrix(matrix):
     Returns:
         None: The matrix is rotated in place, no new matrix is returned.
 
-    This function rotates the matrix in place by performing a series of swaps 
-    for each "layer" of the matrix. Each element is moved to its new position 
+    This function rotates the matrix in place by performing a series of swaps
+    for each "layer" of the matrix. Each element is moved to its new position
     as part of a cycle (four elements are swapped at a time).
     '''
     left, right = 0, len(matrix) - 1  # Define the outer bounds of the matrix
 
     # Loop through the matrix layers (from outermost to innermost)
     while left < right:
-        for i in range(right - left):  # Iterate over elements in the current layer
+        for i in range(right - left):
             top, bottom = left, right  # Set the bounds for the current layer
 
             # Save the value at the top-left corner of the current layer
